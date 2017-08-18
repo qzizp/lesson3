@@ -19,4 +19,20 @@
     }
   }
 
+  $exploded_1 = [];
+  $exploded_2 = [];
+
+  foreach ($newAnimals as $key => $value) {
+    $explodedPart = explode(" ", "$value");
+    $exploded_1[] = $explodedPart[0];
+    $exploded_2[] = $explodedPart[1];
+  }
+  
+  shuffle($exploded_2);
+
+  echo "<pre>";
+  print_r($exploded_1);
+  print_r($exploded_2);
+  echo "</pre>";
+
  ?>
