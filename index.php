@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 
   $animals = [
     "Antarctica" => ["Catharacta skua", "Balaenoptera borealis", "Ommatophoca rossii"],
@@ -9,30 +9,22 @@
     "Australia" => ["Dendrolagus", "Cygnus atratus", "Moloch horridus"]
   ];
 
-  $newAnimals = [];
+  $twoWordsAnimals = [];
 
-  foreach ($animals as $continents => $animalList) {
+  foreach ($animals as $continent => $animalList) {
     foreach ($animalList as $animalListKey => $animal) {
-      if (strpos($animal, " ")) {
-        $newAnimals[] = $animal;
-      } 
+
+      $explodedAnimals = explode(" ", $animal);
+      $numberOfWords = count($explodedAnimals);
+      
+        if ($numberOfWords === 2) {
+          $twoWordsAnimals[] = $animal;
+        }
     }
   }
 
-  $exploded_1 = [];
-  $exploded_2 = [];
-
-  foreach ($newAnimals as $key => $value) {
-    $explodedPart = explode(" ", "$value");
-    $exploded_1[] = $explodedPart[0];
-    $exploded_2[] = $explodedPart[1];
-  }
-  
-  shuffle($exploded_2);
-
-  echo "<pre>";
-  print_r($exploded_1);
-  print_r($exploded_2);
+  echo "<pre>";       
+  print_r($twoWordsAnimals);        
   echo "</pre>";
 
  ?>
