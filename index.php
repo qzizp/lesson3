@@ -1,4 +1,5 @@
 ﻿<?php 
+
   // Все животные
   $animals = [
     "Antarctica" => ["Catharacta skua", "Balaenoptera borealis", "Ommatophoca rossii"],
@@ -12,27 +13,23 @@
   // Животные, названия которых состоят из двух слов
   $twoWordsAnimals = [];
 
+  // Части названий животных
+  $part1 = []; // Первое слово в названии
+  $part2 = []; // Второе слово в названии
+
   foreach ($animals as $continent => $animalList) {
     foreach ($animalList as $animalListKey => $animal) {
-
       $explodedAnimals = explode(" ", $animal);
       $numberOfWords = count($explodedAnimals);
       
         if ($numberOfWords === 2) {
           $twoWordsAnimals[] = $animal;
+          $explodedAnimals = explode(" ", $animal);
+          $part1[] = $explodedAnimals[0];
+          $part2[] = $explodedAnimals[1];    
         }
     }
   }
-
-  // Части названий животных
-  $part1 = []; // Первое слово в названии
-  $part2 = []; // Второе слово в названии
-
-  foreach ($twoWordsAnimals as $key => $value) {
-    $explodedAnimals = explode(" ", $value);
-    $part1[] = $explodedAnimals[0];
-    $part2[] = $explodedAnimals[1];
-  }    
     
   shuffle($part2);
 
