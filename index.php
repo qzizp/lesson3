@@ -24,7 +24,6 @@
       
         if ($numberOfWords === 2) {
           $twoWordsAnimals[] = $animal;
-          $explodedAnimals = explode(" ", $animal);
           $part1[] = $explodedAnimals[0];
           $part2[] = $explodedAnimals[1];    
         }
