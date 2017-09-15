@@ -22,7 +22,7 @@
       $explodedAnimals = explode(" ", $animal);
       $numberOfWords = count($explodedAnimals);
       
-        if ($numberOfWords === 2) {
+        if ($numberOfWords == 2) {
           $twoWordsAnimals[] = $animal;
           $part1[] = $explodedAnimals[0];
           $part2[] = $explodedAnimals[1];    
@@ -55,8 +55,9 @@
   <h1>Жестокое обращение с животными</h1>
     <div class="animals-list">
       <?php 
-        foreach ($final as $key => $value) {
-        echo $value . "<br>";
+        foreach ($final as $value) {
+            // echo $value . "<br>";
+            echo implode("<br>", $value);
         }
       ?>
     </div>
